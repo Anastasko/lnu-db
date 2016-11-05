@@ -1,9 +1,9 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
-    <changeSet author="volodja (generated)" id="1478341660020-1">
+    <changeSet author="volodja (generated)" id="1478342874888-1">
         <createSequence sequenceName="hibernate_sequence"/>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-2">
+    <changeSet author="volodja (generated)" id="1478342874888-2">
         <createTable tableName="cityitem">
             <column name="id" type="BIGINT">
                 <constraints nullable="false"/>
@@ -14,15 +14,7 @@
             <column name="longitude" type="numeric(19, 15)"/>
         </createTable>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-3">
-        <createTable tableName="lobresource">
-            <column name="id" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="data" type="OID(10)"/>
-        </createTable>
-    </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-4">
+    <changeSet author="volodja (generated)" id="1478342874888-3">
         <createTable tableName="map">
             <column name="id" type="BIGINT">
                 <constraints nullable="false"/>
@@ -35,7 +27,7 @@
             <column name="svg_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-5">
+    <changeSet author="volodja (generated)" id="1478342874888-4">
         <createTable tableName="mapitem">
             <column name="id" type="BIGINT">
                 <constraints nullable="false"/>
@@ -45,7 +37,7 @@
             <column name="map_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-6">
+    <changeSet author="volodja (generated)" id="1478342874888-5">
         <createTable tableName="urlresource">
             <column name="id" type="BIGINT">
                 <constraints nullable="false"/>
@@ -53,7 +45,7 @@
             <column name="url" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-7">
+    <changeSet author="volodja (generated)" id="1478342874888-6">
         <createTable tableName="useraccount">
             <column name="id" type="BIGINT">
                 <constraints nullable="false"/>
@@ -65,34 +57,31 @@
             <column name="signinprovider" type="INT"/>
         </createTable>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-8">
+    <changeSet author="volodja (generated)" id="1478342874888-7">
         <addPrimaryKey columnNames="id" constraintName="cityitem_pkey" tableName="cityitem"/>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-9">
-        <addPrimaryKey columnNames="id" constraintName="lobresource_pkey" tableName="lobresource"/>
-    </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-10">
+    <changeSet author="volodja (generated)" id="1478342874888-8">
         <addPrimaryKey columnNames="id" constraintName="map_pkey" tableName="map"/>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-11">
+    <changeSet author="volodja (generated)" id="1478342874888-9">
         <addPrimaryKey columnNames="id" constraintName="mapitem_pkey" tableName="mapitem"/>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-12">
+    <changeSet author="volodja (generated)" id="1478342874888-10">
         <addPrimaryKey columnNames="id" constraintName="urlresource_pkey" tableName="urlresource"/>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-13">
+    <changeSet author="volodja (generated)" id="1478342874888-11">
         <addPrimaryKey columnNames="id" constraintName="useraccount_pkey" tableName="useraccount"/>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-14">
+    <changeSet author="volodja (generated)" id="1478342874888-12">
         <addUniqueConstraint columnNames="map_id, path" constraintName="uk47r1x45thjj4mxi1knmmyqmly" tableName="mapitem"/>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-15">
+    <changeSet author="volodja (generated)" id="1478342874888-13">
         <addForeignKeyConstraint baseColumnNames="cityitem_id" baseTableName="map" constraintName="fk2w99if891p1fi0elica37led0" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="cityitem"/>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-16">
+    <changeSet author="volodja (generated)" id="1478342874888-14">
         <addForeignKeyConstraint baseColumnNames="svg_id" baseTableName="map" constraintName="fk5yh0fvpt97p6qe3o8rq3xia39" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="urlresource"/>
     </changeSet>
-    <changeSet author="volodja (generated)" id="1478341660020-17">
+    <changeSet author="volodja (generated)" id="1478342874888-15">
         <addForeignKeyConstraint baseColumnNames="map_id" baseTableName="mapitem" constraintName="fkbpoqisaftg5aitcg23nvof39e" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="map"/>
     </changeSet>
 </databaseChangeLog>
